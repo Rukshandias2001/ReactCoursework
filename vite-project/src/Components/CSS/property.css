@@ -1,0 +1,85 @@
+
+
+.slide-container{
+  width: 400px;
+ 
+  
+}
+.detailOfthepage{
+  position: relative;
+  display: flex;
+  gap: 40px;
+  top: 100px;
+  transition: all 1s ease;
+  width: 800px;
+  justify-content: center;
+  align-items: center;
+  left: 300px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 5px 5px rgba(0,0,0,0.4);
+  
+}
+.nonDisplay{
+  display: none;
+}
+.detailOfthepage:hover{
+  scale: 1.1;
+
+
+}
+.detail{
+  position: relative;
+  display: flex;
+  width: 700px;
+  background-color: #6C3483;
+  box-shadow: 5px 5px black;
+  padding: 20px;
+  border-radius: 20px;
+  color: white;
+  
+
+}
+.viewMoredetails{
+  position: relative;
+  display: flex;
+  
+  justify-content: center;
+  top: 50px;
+
+}
+
+.viewMoredetails ul{
+  position: relative;
+  display: flex;  
+  list-style: none;
+  gap: 5px;
+  
+ 
+  
+}
+.viewMoredetails ul li{
+  background-color: rgba(255,255,255,255,0.1);
+  padding: 30px;
+  color: black;
+  transition: all 1s ease;
+  width: 200px;
+  box-shadow: 5px 5px rgba(0,0,0,0.4);
+
+}
+.viewMoredetails ul li:hover{
+  scale: 1.1;
+
+}
+.viewMoredetails ul li:visited{
+  background-color: #ff66ff;
+}
+.licolor{
+  background-color: #009933;
+}
+.floorPlan {
+  width: 600px;
+  height: 400px;
+  
+
+}

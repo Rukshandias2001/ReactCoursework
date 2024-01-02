@@ -1,0 +1,81 @@
+
+
+.IncludeForm{
+  position: relative;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 200px;
+  background:linear-gradient(to bottom, #796dce, #6639a6);
+  width: 1000px;
+  left: 150px;
+  border-radius: 20px;
+  height: 800px;
+  color: white;
+  box-shadow: 10px 10px black;
+  
+  
+}
+.card{
+  transition: all 1s ease;
+ 
+}
+.card:hover{
+  scale: 1.1;
+}
+.Heading1 h1{
+  color: #E32934;
+  transform: translateY(-40px);
+}
+.para1{
+  transform: translateY(-20px);
+}
+.Formdata{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  font-size: 40px;
+}
+.Formdata input{
+  
+  font-size: 30px;
+  color: black;
+  height:60px;
+
+}
+.Formdata button{
+  border-radius: 20px;
+  background: #d5def5; 
+}
+.details_of_scheme{
+  width: 200px;
+  justify-content: center;
+  position: relative;
+  left: 100px;
+  
+}
+.Including{
+  position: relative;
+  display: flex;
+  gap: 20px;
+}
+.details{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6,20px);
+  top: 400px;
+  gap: 200px;
+  grid-template-rows: repeat(2,400px);
+  flex-direction: column;
+  right: 30px;
+ 
+  
+}
+.card-img-top{
+  width: 200px;
+  height: 200px;
+}

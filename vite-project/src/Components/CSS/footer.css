@@ -1,0 +1,45 @@
+
+.listImage{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 600px;
+  background: #142d4c; 
+  color: white;
+  gap: 100px;
+}
+.image{
+  display: flex;
+  position: relative;
+  gap: 20px;
+}
+.iconimage:hover{
+  background: #928a97; 
+}
+.iconimage{
+  position: relative;
+  display: flex;
+  background: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  top: 50px;
+}
+.iconimage > img{
+  width: 40px;
+  height: 40px;
+}
+.lists{
+  position: relative;
+  display: flex;
+  gap: 40px;
+
+}
+.list-of-element ul li{
+  text-decoration: none;
+  list-style: none;
+}
