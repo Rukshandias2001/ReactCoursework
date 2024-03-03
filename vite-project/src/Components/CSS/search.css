@@ -79,3 +79,44 @@
   width: 200px;
   height: 200px;
 }
+.displayPage{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 50px;
+}
+.displayPage ul{
+  position: relative;
+  display: flex;  
+  list-style: none;
+  gap: 5px;
+  
+}
+
+.displayPage ul li{
+  background-color: rgba(255,255,255,255,0.1);
+  padding: 30px;
+  color: black;
+  transition: all 1s ease;
+  width: 200px;
+  box-shadow: 5px 5px rgba(0,0,0,0.4);
+}
+.displayPage ul li:hover{
+  scale: 1.1;
+}
+.dipsplayNone{
+  display: none;
+}
+.detaildisplay{
+  display: flex;
+  position: relative;
+}
+.btn2{
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+.minos{
+  background-color: #C70039;
+  border: 2px solid #C70039;
+}

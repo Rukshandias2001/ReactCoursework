@@ -13,13 +13,7 @@ import Favourite from './Components/Pages/Favourite';
 
 
 function App() {
-  const [favorites, setFavorites] = useState([]);
-
-  const handleAddToFavorites = (property) => {
-    console.log(favorites);
-    setFavorites((prevFavorites) => [...prevFavorites, property]);
-  };
-
+ 
 
   return (
    <>
@@ -30,8 +24,8 @@ function App() {
           <div>
             <Routes>
               <Route path="/about" element={<About/>} />
-              <Route path="/search" element={<Search favorites={favorites} onAddToFavorites={handleAddToFavorites} />} />
-              <Route path="/favourite" element={<Favourite favorites={favorites} />} />
+              <Route path="/" element={<Search />} />
+              <Route path="/favourite" element={<Favourite />} />
               <Route path="/contact" element={< Contactus/>} /> 
               <Route path="/homepage" element={<Homapage/>} />
               <Route path ="/displayhome/:id" element={<DisplayPropertypage/>}/>

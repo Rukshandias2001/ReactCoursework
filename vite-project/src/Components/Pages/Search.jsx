@@ -4,12 +4,20 @@ import propertiesData from '../../ApICall/properties.json';
 import DisplayPropertypage from './DisplayPropertypage';
 import { Link } from 'react-router-dom';
 import displayimage from '../images/Display.jpg'
+import Favourite from './Favourite';
 
 
-const Search = ({ favorites, onAddToFavorites }) => {
+const Search = () => {
   
   const [searchCity, setSearchCity] = useState([]);
-  const [searchFavorites, setSearchFavorites] = useState([]);
+  const [favouriteDetails,setFavouriteDetail]= useState([]);
+  const [toggleState,setToggleState] = useState(1);
+  const [fav,setFav]=useState([1]);
+
+
+ 
+
+  
 
   
   
@@ -19,8 +27,7 @@ const Search = ({ favorites, onAddToFavorites }) => {
     count: 0,
     postalCode: 0,
   });
-  const [input, setInput] = useState('');
-  const [selectedProperty, setSelectedProperty] = useState(null);
+  
  
    
 
@@ -33,15 +40,7 @@ const Search = ({ favorites, onAddToFavorites }) => {
   };
 
   useEffect(() => {
-    const storedSearchCriteria = JSON.parse(localStorage.getItem('searchCriteria'));
-    if(storedSearchCriteria){
-      setSearchCity(storedSearchCriteria)
-      fetchData();
-    }else{
-      fetchData();
-    }
-   
-    
+    fetchData(); 
   }, []);
 
   const handleCitySearch = (e) => {
@@ -60,27 +59,47 @@ const Search = ({ favorites, onAddToFavorites }) => {
     setSearchCity(filteredCityProps);
     localStorage.setItem('searchCriteria', JSON.stringify(searchClass))
   };
-  const handleViewDetails = (property) => {
-    setSelectedProperty(property);
-    
-  };
+  
 
   const handleAddToFavorites = (property) => {
-    console.group(property);
-   
-    
-      onAddToFavorites(property);
-      console.log(onAddToFavorites);
-      alert("You have added the item successfully!")
-    
+    setFavouriteDetail((prevFavorites) => [...prevFavorites, property]);
+    localStorage.setItem('favorites', JSON.stringify([...favouriteDetails, property]));
+    alert('You have added the item successfully!');
+  };
+  const removerItem = (Property)=>{
+    const updateFavourites = favouriteDetails.filter((include)=>include.id!==Property.id);
+    setFavouriteDetail(updateFavourites);
+    localStorage.setItem('favorites', JSON.stringify(updateFavourites));
+    alert("You have succesfully deleted the item !")
+
+  };
 
   
+  const toggleTab =(index)=>{
+    setToggleState(index);
     
-    
-  };
+  }
+  const favTab =(index)=>{
+    setFav(index);
+  }
   return (
+    <>
+      <div className='displayPage'>
+          <ul>
+            <li onClick={()=>toggleTab(1)}>
+              ViewProperties
+            </li>
+            <li onClick={()=>toggleTab(2)}>
+              FavoutitePage
+            </li>
+          </ul>
+      </div>
     <div>
-      <div className='IncludeForm'>
+      <div className={toggleState===2 ? "detaildisplay":"dipsplayNone"}>
+        <Favourite object={favouriteDetails}/>
+      </div>
+     
+      <div  className={toggleState===1 ? "IncludeForm":"dipsplayNone"}>
         <div className='Heading1'>
           <h1>Believing In Find It</h1>
         </div>
@@ -122,7 +141,7 @@ const Search = ({ favorites, onAddToFavorites }) => {
         </div>
       </div>
 
-      <div className='details'>
+      <div className={toggleState==1 ? "details":"dipsplayNone"}>
         {searchCity && searchCity.length > 0 ? (
           searchCity.map((item) => (
             <div className='details_of_scheme' key={item.id}>
@@ -144,8 +163,9 @@ const Search = ({ favorites, onAddToFavorites }) => {
                 <div className='card-body'>
                   <Link to={`/displayhome/${item.id}` }className='card-link'> Click here to view information</Link>
                 </div>
-                <div className='card-body'>
-                <button type="button" className="btn btn-success"  onClick={() => handleAddToFavorites(item)}>Add </button> 
+                <div className='card-body btn2'>
+                  <button type="button" className="btn btn-success"  onClick={() => handleAddToFavorites(item)}> + </button> 
+                  <button type="button" className="btn btn-success minos"  onClick={() => removerItem(item)} > - </button> 
                 </div>
                 
               </div>
@@ -160,6 +180,8 @@ const Search = ({ favorites, onAddToFavorites }) => {
     )} */}
     </div>
    
+    </>
+    
   );
 };
 
