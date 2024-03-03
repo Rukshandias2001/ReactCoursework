@@ -1,0 +1,63 @@
+/* Login.css */
+
+.form-signin {
+  max-width: 400px;
+  padding: 15px;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.form-signin .mb-4 {
+  margin-bottom: 1.5rem!important;
+}
+
+.h3.mb-3.fw-normal {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-floating {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px; /* Rounded edges for input */
+}
+
+.form-floating > label {
+  padding: 10px;
+  background-color: #f7f7f7; /* Matches the form background */
+  border-radius: 20px; /* Rounded edges for label */
+}
+
+.form-check.text-start.my-3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn.btn-primary.w-100.py-2 {
+  font-size: 18px; /* Larger font size for the button */
+  border-radius: 20px; /* Rounded edges for button */
+  padding: 10px 0; /* More padding for taller button */
+  margin-top: 10px; /* Space above the button */
+}
+
+.text-body-secondary {
+  text-align: center;
+  color: #6c757d; /* Grey text for the copyright */
+}
+
+@media (max-width: 576px) {
+  .form-signin {
+    padding: 15px;
+    margin-top: 20px;
+  }
+}

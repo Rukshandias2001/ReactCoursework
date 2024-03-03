@@ -164,18 +164,18 @@ const Search = () => {
                     alt="..."
                   />
                   <div className="card-body">
-                    <h5 className="card-title">{item.type}</h5>
+                    <h5 className="card-title">{item.details.type}</h5>
                     {/* <p className='card-text'>{item.description}</p> */}
                   </div>
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item">
-                      Bedrooms: {item.bedrooms}
+                      Bedrooms: {item.details.bedrooms}
                     </li>
                     <li className="list-group-item">
                       Added: {item.added.month}.{item.added.day}.
                       {item.added.year}
                     </li>
-                    <li className="list-group-item">Price: {item.price}Rs</li>
+                    <li className="list-group-item">Price: {item.details.price}Rs</li>
                   </ul>
                   <div className="card-body">
                     <Link to={`/displayhome/${item.id}`} className="card-link">

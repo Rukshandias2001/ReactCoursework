@@ -8,6 +8,7 @@ import Footer from './Components/Footer/Footer.Jsx';
 import DisplayPropertypage from './Components/Pages/DisplayPropertypage';
 import Favourite from './Components/Pages/Favourite';
 import DisplaySchema from './Components/Pages/DisplaySchema';
+import { Login } from './Components/Pages/Login';
 
 export const UserContext = createContext();
 
@@ -26,6 +27,7 @@ function App() {
           <div>
             <Routes>
               <Route path="/" element={<Search />} />
+              <Route path="/login" element={<Login/>}/>
               <Route path="/favourite" element={<Favourite />} />
               <Route path="/contact" element={<Contactus/>} /> 
               <Route path="/homepage" element={<Homapage/>} />

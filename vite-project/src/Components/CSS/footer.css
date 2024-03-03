@@ -1,47 +1,62 @@
+/* footer.css */
 
-.listImage{
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  top: 600px;
-  background: #142d4c; 
-  color: white;
-  gap: 100px;
+.footercontain {
+  background-color: #2C3E50; /* Dark blue background */
+  color: #FFFFFF; /* White text */
+  padding: 20px 0;
+  font-family: 'Arial', sans-serif;
 }
 
-
-.image{
+.listImage {
   display: flex;
-  position: relative;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
   gap: 20px;
 }
-.iconimage:hover{
-  background: #928a97; 
-}
-.iconimage{
-  position: relative;
-  display: flex;
-  background: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 100%;
-  justify-content: center;
-  align-items: center;
-  top: 50px;
-}
-.iconimage > img{
-  width: 40px;
-  height: 40px;
-}
-.lists{
-  position: relative;
-  display: flex;
-  gap: 40px;
 
+.iconimage img {
+  width: 40px; /* Adjust the size of icons */
+  height: 40px;
+  transition: transform 0.3s ease;
 }
-.list-of-element ul li{
-  text-decoration: none;
+
+.iconimage img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.list-of-element {
+  text-align: center;
+}
+
+.lists {
   list-style: none;
+  padding: 0;
+}
+
+.lists li {
+  padding: 10px 0; /* Add more space between list items */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.lists li:hover {
+  color: #3498DB; /* Lighter blue on hover */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .listImage {
+    flex-direction: column;
+  }
+
+  .image,
+  .list-of-element {
+    margin-bottom: 20px;
+  }
 }
