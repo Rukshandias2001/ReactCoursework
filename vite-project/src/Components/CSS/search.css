@@ -8,13 +8,13 @@
   justify-content: center;
   align-items: center;
   top: 200px;
-  background:linear-gradient(to bottom, #796dce, #6639a6);
+  background:linear-gradient(to bottom,#a393eb, #f5c7f7);
   width: 1000px;
-  left: 150px;
+  left: 210px;
   border-radius: 20px;
   height: 800px;
   color: white;
-  box-shadow: 10px 10px black;
+  box-shadow: 10px 10px #27296d;
   
   
 }
@@ -26,11 +26,14 @@
   scale: 1.1;
 }
 .Heading1 h1{
-  color: #E32934;
+  color: #5e63b6;
   transform: translateY(-40px);
+  font-family: 'Roboto Condensed';
+  font-size: 70px;
 }
 .para1{
   transform: translateY(-20px);
+  font-family: 'Roboto Condensed';
 }
 .Formdata{
   display: flex;
@@ -42,14 +45,23 @@
 }
 .Formdata input{
   
-  font-size: 30px;
+  font-size: 40px;
   color: black;
   height:60px;
-
+  border-radius: 20px;
+  border: 2px solid #27296d;
+  font-family: 'Roboto Condensed';
+  
+  
 }
 .Formdata button{
   border-radius: 20px;
   background: #d5def5; 
+  color: #5e63b6;
+  background-color: #c3bef0;
+  font-family: 'Roboto Condensed';
+  
+
 }
 .details_of_scheme{
   width: 200px;
@@ -117,6 +129,56 @@
   justify-content: space-between;
 }
 .minos{
-  background-color: #C70039;
-  border: 2px solid #C70039;
+  color: #E32934;
+  background-color: white;
+  border: 2px solid white;
+}
+.minos:hover{
+  background-color: #E32934;
+  border: 2px solid #E32934;
+}
+.plus{
+  background-color: white;
+  color: green;
+  border: 2px solid white;
+}
+
+@media  only screen and  (max-width:400px){
+  .IncludeForm{
+    width: 450px;
+    left: 0px;
+    height: 1000px;
+    color: black;
+    padding: 0px;
+    width: 400px;
+    
+  }
+  
+  .Para{
+    width: 200px;
+  }
+  .details{
+    grid-template-columns: repeat(1,20px);
+    grid-template-rows: repeat(12,400px);
+    
+  }
+  .displayPage ul{
+    flex-direction: column;
+    left:0px;
+  }
+  .Including{
+    flex-direction: column;
+    font-size: 20px;
+  }
+  .Including img{
+    width: 200px;
+    height: 200px;
+  }
+  .Formdata{
+    font-size: 20px;
+  }
+  .Formdata input{
+    font-size: 20px;
+  }
+
 }

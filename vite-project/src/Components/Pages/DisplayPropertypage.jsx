@@ -5,8 +5,9 @@ import { Fade } from 'react-slideshow-image';
 import { useParams } from 'react-router-dom';
 import '../CSS/property.css';
 
+
 const DisplayPropertypage = () => {
-  const { id } = useParams();
+  const { id } = useParams();//used params passed the id through the  url
   const [searchCity, setSearchCity] = useState([]);
   const [toggleState,setToggleState] = useState(1);
 
@@ -29,7 +30,7 @@ const DisplayPropertypage = () => {
 
   useEffect(() => {
     // Filter properties based on the id parameter
-    const filteredCityProps = propertiesData.properties.filter((props) => props.id === id);
+    const filteredCityProps = propertiesData.properties.filter((props) => props.id === id);//get the property of the relevant ID where I passed through the url
     setSearchCity(filteredCityProps);
   }, [id]); // Ensure useEffect runs only when id changes
 
@@ -48,9 +49,10 @@ const DisplayPropertypage = () => {
     setToggleState(index);
     
   }
-
+  
   return (
     <>
+    <div className='coverPage1'>
     <div className='viewMoredetails'>
       <ul>
         
@@ -65,7 +67,7 @@ const DisplayPropertypage = () => {
               {sliderImages.map((image, index) => (
                 // Add the return statement here
                 <div key={index}>
-                  <div style={{ ...divStyle, backgroundImage: `url(${image.url})` }}>
+                  <div  className= "Img" style={{ ...divStyle, backgroundImage: `url(${image.url})` }}>
                     <span style={spanStyle}>{image.caption}</span>
                   </div>
                 </div>
@@ -74,7 +76,7 @@ const DisplayPropertypage = () => {
           </div>
           <div className='detail'>
               {searchCity.map((item) => (
-                <div key={item.id}>
+                <div key={item.id} className='more'>
                   <p>Price : {item.price}</p>
                   <p>Location :{item.location}</p>
                   <p>type : {item.type}</p>
@@ -89,11 +91,11 @@ const DisplayPropertypage = () => {
       {searchCity.map((item) => (
           <div key={item.id}>
               <iframe src={item.map}
-                 width="600" 
-                height="450" 
+                 width="800" 
+                height="700" 
                 allowFullScreen="" 
                 loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade">
+                referrerPolicy="no-referrer-when-downgrade" className='iframe'>
               </iframe>
          </div>
         ))}
@@ -107,6 +109,9 @@ const DisplayPropertypage = () => {
          </div>
         ))}
       </div>
+
+    </div>
+   
    
       
     
