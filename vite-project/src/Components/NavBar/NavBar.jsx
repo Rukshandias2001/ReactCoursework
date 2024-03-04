@@ -16,6 +16,7 @@ function NavBar() {
               <a className="nav-link" href="favourite">Favourites</a>
               <a className="nav-link" href="/displayhome/:id">displayhome</a>
               <a className="nav-link" href="/login">login</a>
+              <a className="nav-link" href="/registration">Registration</a>
               
             </div>
           </div>
