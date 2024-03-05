@@ -31,7 +31,7 @@ function App() {
           <NavBar />
           <div>
             <Routes>
-              <Route path="/" element={<Search />} />
+              <Route path="/search" element={<Search />} />
               <Route path="/login" element={<Login />} />
               <Route path="/favourite" element={<Favourite />} />
               <Route path="/contact" element={<Contactus />} />
@@ -41,7 +41,7 @@ function App() {
                 path="/displayhome/:id"
                 element={<DisplayPropertypage />}
               />
-              <Route path="/registration" element={<Registration />} />
+              <Route path="/" element={<Registration />} />
             </Routes>
           </div>
         </BrowserRouter>

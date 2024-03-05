@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Registration = () => {
   const { user, setUsername } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const register = async (e) => {
     e.preventDefault(); // Prevent form submission from reloading the page
@@ -24,8 +25,7 @@ const Registration = () => {
 
       if (response.status == 200) {
         alert("Registration successfull!");
-       
-       
+        navigate('/login');   
       } else if (response && response.data === 400) {
         alert("There is a user under those two data unsuccessful!");
       }

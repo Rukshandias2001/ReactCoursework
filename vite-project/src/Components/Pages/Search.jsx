@@ -10,8 +10,11 @@ import axios from "axios";
 
 const Search = () => {
   const [searchCity, setSearchCity] = useState([]);
-  const { api, setApi } = useContext(UserContext);
+  const { user, setUsername , api, setApi } = useContext(UserContext);
   const [toggleState, setToggleState] = useState(1);
+
+  const username = localStorage.getItem('username');
+  const password = localStorage.getItem('password');
 
   const [searchClass, setSearchClass] = useState({
     type: "",
@@ -23,6 +26,7 @@ const Search = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        console.log("The username is "+username);
         setSearchCity(propertiesData.properties); //set the object to the setter
         const response = await axios.get(
           "http://localhost:3000/api/details/get"
@@ -68,9 +72,9 @@ const Search = () => {
   const handleAddToFavorites = async (property) => {
     console.log(property);
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/favourites/favourites",
-        {details:property.details,added:property.added,pictures:property.pictures}
+      const response = await axios.patch(
+        "http://localhost:3000/api/register/updateUser",
+        {username:username,password:password,favorites:property.details,pictures:property.pictures.picture}
       );
       alert("You have added the item successfully!");
       console.log(response);
