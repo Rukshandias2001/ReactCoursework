@@ -84,7 +84,7 @@ export const Login = () => {
           </label>
         </div>
         <button className="btn btn-primary w-100 py-2" type="submit">
-          Sign in
+          Login in
         </button>
         <p className="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
       </form>

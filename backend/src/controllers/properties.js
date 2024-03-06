@@ -29,7 +29,7 @@ router.route('/post').post(async (req, res) => {
     }
     return res.status(200).json({ Alert: "data has been stored to database" });
   } catch (err) {
-    console.log("there is an error " + err);
+    console.log( err);
     return res.status(500).json({ Alert: "An error occurred while processing your request." });
   }
 });
