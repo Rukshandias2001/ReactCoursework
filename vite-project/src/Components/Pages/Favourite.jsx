@@ -1,21 +1,22 @@
 import { useEffect, useState } from "react";
-import '../CSS/favourite.css';
-import axios from 'axios';
+import "../CSS/favourite.css";
+import axios from "axios";
 
 function Favourite() {
   const [items, setItems] = useState([]);
-  const username = localStorage.getItem('username');
-  const password = localStorage.getItem('password');
+  const username = localStorage.getItem("username");
+  const password = localStorage.getItem("password");
 
   useEffect(() => {
-    
     const fetchData = async () => {
       try {
-        const response = await axios.post('http://localhost:3000/api/register/displayFavourites', { username, password });
-        
+        const response = await axios.post(
+          "http://localhost:3000/api/register/displayFavourites",
+          { username, password }
+        );
+
         if (response && response.data) {
           setItems(response.data.favorites);
-          
         }
       } catch (err) {
         console.error(err);
@@ -26,13 +27,18 @@ function Favourite() {
 
   const handleDelete = async (id) => {
     try {
-      console.log( id);
+      console.log(id);
 
-      const response = await axios.post('http://localhost:3000/api/delete/delete', {id:id, username, password })
+      const response = await axios.post(
+        "http://localhost:3000/api/delete/delete",
+        { id: id, username, password }
+      );
       if (response.status === 200) {
         alert("Item has been deleted successfully!");
         // Update items state to reflect deletion
-        setItems(currentItems => currentItems.filter(item => item.id !== id));
+        setItems((currentItems) =>
+          currentItems.filter((item) => item.id !== id)
+        );
       } else {
         alert("The item has not been deleted yet.");
       }
@@ -62,7 +68,13 @@ function Favourite() {
                   <p>Bedrooms: {item.bedrooms}</p>
                   <p>Description: {item.description}</p>
                 </div>
-                <button type="button" className="btn btn-danger" onClick={() => handleDelete(item.id)}>Delete</button>
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  onClick={() => handleDelete(item.id)}
+                >
+                  Delete
+                </button>
               </div>
             </div>
           ))
