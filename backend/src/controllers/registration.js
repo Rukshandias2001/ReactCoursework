@@ -23,7 +23,7 @@ router.route("/registration").post(async(req,res)=>{
     }
     try{
       const response = await userModule.create({username:username,password:password})
-      console.log("The response is "+response);
+      
 
       if(!response){
         res.status(400).json({Alert:"Data have not successfully provided"});
@@ -54,10 +54,10 @@ router.route("/login").post(async(req,res)=>{
 
 router.route('/updateUser').patch(async(req, res) => {
   const { username, password, favorites,pictures } = req.body;
-  console.log(req.body);
+  
   
   favorites.pictures= pictures;
-  console.log(favorites);
+  
   
   if (!username || !password) {
     console.log("Bad credentatials");
@@ -68,7 +68,7 @@ router.route('/updateUser').patch(async(req, res) => {
   try {
     // Find the user by username and password (though using password directly like this isn't recommended for security reasons)
     const user = await userModule.findOne({ username: req.body.username, password:req.body.password });
-    console.log("The user is "+user);
+    
 
     if (!user) {
       return res.status(404).json({Alert: "No user found"});
@@ -95,8 +95,7 @@ router.route('/displayFavourites').post(async(req,res)=>{
   const {username,password} = req.body;
   try{
     const response = await userModule.findOne({username:username,password:password});
-    console.log(response);
-
+   
     if(!response){
       return res.status(400).json({Alert: "You have not provided correct details"});
     }

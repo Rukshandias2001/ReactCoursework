@@ -182,7 +182,7 @@ const Search = () => {
                     <li className="list-group-item">Price: {item.details.price}Rs</li>
                   </ul>
                   <div className="card-body">
-                    <Link to={`/displayhome/${item.id}`} className="card-link">
+                    <Link to={`/displayhome/${item.details.id}`} className="card-link">
                       {" "}
                       Click here to view information
                     </Link>

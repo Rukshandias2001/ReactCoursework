@@ -49,7 +49,21 @@ router.route('/get').get(async(req,res)=>{
   }
 
 });
+router.route('/id').post(async(req,res)=>{
+  const{id} = req.body;
+  console.log(id);
 
+  try{
+    const data = await listOfProperties.findOne({'details.id':id});
+
+    console.log(data);
+
+    return res.status(200).send(data);
+
+  }catch(err){
+    console.log(err);
+  }
+})
 
 
 
