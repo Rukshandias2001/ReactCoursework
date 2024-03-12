@@ -17,6 +17,7 @@ function NavBar() {
               <a className="nav-link" href="/displayhome/:id">displayhome</a>
               <a className="nav-link" href="/login">login</a>
               <a className="nav-link" href="/">Registration</a>
+              <a className="nav-link" href="/addProperty">Add</a>
               
             </div>
           </div>

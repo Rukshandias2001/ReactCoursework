@@ -3,6 +3,7 @@ import '../CSS/registration.css';
 import loginpage from'../images/login.webp';
 
 
+
 const registrationPage = () => {
   return (
 

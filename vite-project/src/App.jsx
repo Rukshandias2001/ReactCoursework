@@ -10,6 +10,7 @@ import Favourite from "./Components/Pages/Favourite";
 import DisplaySchema from "./Components/Pages/DisplaySchema";
 import { Login } from "./Components/Pages/Login";
 import Registration from "./Components/Pages/Registration";
+import Add from "./Components/Adminstration/Add";
 
 export const UserContext = createContext();
 
@@ -37,6 +38,8 @@ function App() {
               <Route path="/contact" element={<Contactus />} />
               <Route path="/homepage" element={<Homapage />} />
               <Route path="/Schema" element={<DisplaySchema />} />
+              <Route path="/addProperty" element={<Add />} />
+              
               <Route
                 path="/displayhome/:id"
                 element={<DisplayPropertypage />}

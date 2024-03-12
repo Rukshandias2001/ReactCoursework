@@ -7,11 +7,14 @@ import displayimage from "../images/Display.jpg";
 import Favourite from "./Favourite";
 import { UserContext } from "../../App";
 import axios from "axios";
+import basket from '../images/icons/basket.svg';
+
 
 const Search = () => {
   const [searchCity, setSearchCity] = useState([]);
   const { user, setUsername , api, setApi } = useContext(UserContext);
   const [toggleState, setToggleState] = useState(1);
+  const [bucket, setBucket] = useState({});
 
   const username = localStorage.getItem('username');
   const password = localStorage.getItem('password');
@@ -87,9 +90,10 @@ const Search = () => {
     const updateFavourites = storedFavorites.filter(
       (include) => include.id !== Property.id
     );
+    
 
     localStorage.setItem("favorites", JSON.stringify(updateFavourites));
-    alert("You have succesfully deleted the item !");
+    alert("You have successfully added the item to the cart !");
   };
 
   return (
@@ -202,7 +206,7 @@ const Search = () => {
                       onClick={() => removerItem(item)}
                     >
                       {" "}
-                      -{" "}
+                      <img src={basket} alt="" />{" "}
                     </button>
                   </div>
                 </div>

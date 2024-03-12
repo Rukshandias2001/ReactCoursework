@@ -5,6 +5,7 @@ const listOfProperties = require('../modals/propertiesSchema');
 
 router.route('/post').post(async (req, res) => {
   const { details, added, pictures } = req.body;
+  console.log(req.body)
   if (!req.body) {
     return res.status(400).json({ Alert: "Nothing has added here !" });
   }
@@ -27,6 +28,7 @@ router.route('/post').post(async (req, res) => {
     if (!data) {
       return res.status(400).json({ Alert: "data has not been stored to database" });
     }
+    
     return res.status(200).json({ Alert: "data has been stored to database" });
   } catch (err) {
     console.log( err);
@@ -56,7 +58,7 @@ router.route('/id').post(async(req,res)=>{
   try{
     const data = await listOfProperties.findOne({'details.id':id});
 
-    console.log(data);
+    
 
     return res.status(200).send(data);
 

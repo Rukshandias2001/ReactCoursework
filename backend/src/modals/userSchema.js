@@ -23,7 +23,8 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String
   },
-  favorites: [propertyDetailsSchema] // Embedding property details as an array of favorites
+  favorites: [propertyDetailsSchema], // Embedding property details as an array of favorites
+  prices:[propertyDetailsSchema]
 });
 
 const User = mongoose.model('User', userSchema);
